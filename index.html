@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>Étude gratuite – Brouillard de sécurité | Temple Sécurité</title>
+<meta name="description" content="Répondez à quelques questions : Temple Sécurité prépare gratuitement l'étude de protection par générateur de brouillard de votre site.">
+<style>
+:root{
+  --navy:#16213b; --navy-2:#1f2d4f; --red:#cb1b21; --red-d:#a8141a;
+  --bg:#f3f5f9; --card:#fff; --line:#d9dee8; --ink:#16213b; --mut:#5b6579; --ok:#12805c;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Montserrat","Helvetica Neue",Arial,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+
+/* ---------- Hero ---------- */
+.top{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 80% at 85% 10%,rgba(255,255,255,.20),transparent 60%),
+   radial-gradient(50% 70% at 60% 90%,rgba(255,255,255,.10),transparent 65%),
+   radial-gradient(40% 60% at 10% 100%,rgba(203,27,33,.28),transparent 70%)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;position:relative}
+.bar img{height:38px;width:auto;display:block}
+.pill{background:var(--red);color:#fff;font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:99px;white-space:nowrap}
+.hero{position:relative;padding:18px 0 56px}
+.hero h1{margin:0 0 12px;font-size:clamp(26px,6.4vw,38px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:#ff6b70}
+.hero p{margin:0 0 18px;font-size:16.5px;color:#dfe5f2;max-width:540px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);padding:6px 12px;border-radius:99px;font-size:13.5px;font-weight:600}
+.chips li::before{content:"✓ ";color:#ff8a8e}
+
+/* ---------- Form card ---------- */
+main{margin-top:-34px;position:relative;padding-bottom:40px}
+.card{background:var(--card);border-radius:18px;box-shadow:0 10px 30px rgba(22,33,59,.14);padding:22px 18px 18px}
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.prog .track{flex:1;height:8px;background:#e7ebf3;border-radius:99px;overflow:hidden}
+.prog .fill{height:100%;width:20%;background:linear-gradient(90deg,var(--red),#e8454b);border-radius:99px;transition:width .35s ease}
+.prog small{font-weight:700;color:var(--mut);font-size:13px;white-space:nowrap}
+.step{display:none}
+.step.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{margin:0 0 4px;font-size:22px;line-height:1.2;font-weight:800}
+.sub{margin:0 0 18px;color:var(--mut);font-size:14.5px}
+.q{margin:0 0 20px;border:0;padding:0;min-width:0}
+.q>legend,.q>label.lab{display:block;font-weight:700;font-size:15px;margin:0 0 8px;padding:0}
+.q .opt-t{font-weight:500;color:var(--mut);font-size:13px}
+.req{color:var(--red)}
+.grid{display:grid;gap:8px}
+.g2{grid-template-columns:1fr 1fr}
+.g1{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}
+@media(min-width:440px){.g3{grid-template-columns:repeat(3,1fr)}}
+.opt{position:relative;display:block}
+.opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opt span{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-weight:600;font-size:14.5px;line-height:1.25;transition:.15s}
+.opt span i{font-style:normal;font-size:20px;flex:none}
+.opt input:checked+span{border-color:var(--navy);background:#eef1f8;box-shadow:inset 0 0 0 1px var(--navy)}
+.opt input:checked+span::after{content:"✓";margin-left:auto;color:#fff;background:var(--red);width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;flex:none}
+.opt input:focus-visible+span{outline:3px solid rgba(203,27,33,.45);outline-offset:2px}
+.opt:hover span{border-color:#9aa6c0}
+input[type=text],input[type=number],input[type=tel],input[type=email],select,textarea{
+  width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px 13px;min-height:48px}
+textarea{min-height:88px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(22,33,59,.22);border-color:var(--navy)}
+.inline{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}
+.unit{position:relative}
+.unit input{padding-right:46px}
+.unit b{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--mut);font-weight:600;pointer-events:none}
+.sw{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:14px;color:var(--mut);cursor:pointer}
+.sw input{width:20px;height:20px;accent-color:var(--navy)}
+.hide{display:none!important}
+.err{color:#b00020;font-size:13.5px;font-weight:600;margin:6px 0 0;min-height:0}
+.err:empty{display:none}
+.bad input[type=text],.bad input[type=number],.bad input[type=tel],.bad input[type=email],.bad select{border-color:#b00020}
+.est{display:flex;gap:12px;align-items:flex-start;background:#eef1f8;border-left:4px solid var(--red);border-radius:10px;padding:12px 14px;margin:2px 0 20px;font-size:14.5px}
+.est strong{display:block;font-size:17px}
+.est .ico{font-size:24px;line-height:1}
+.est small{display:block;color:var(--mut);margin-top:4px;font-size:12.5px}
+.note{background:#fff7e6;border:1px solid #f0d9a6;border-radius:10px;padding:10px 12px;font-size:13.5px;color:#5f4a12;margin:-4px 0 18px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mut);line-height:1.45}
+.consent input{width:22px;height:22px;margin-top:1px;flex:none;accent-color:var(--navy)}
+.nav{display:flex;gap:10px;margin-top:22px}
+.btn{font:inherit;font-weight:800;font-size:16px;border:0;border-radius:12px;min-height:52px;padding:0 20px;cursor:pointer;transition:.15s}
+.btn.pri{background:var(--red);color:#fff;flex:1;box-shadow:0 6px 16px rgba(203,27,33,.28)}
+.btn.pri:hover{background:var(--red-d)}
+.btn.sec{background:#e9edf5;color:var(--navy)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.fine{font-size:12.5px;color:var(--mut);text-align:center;margin:12px 0 0}
+.fail{background:#fdecee;border:1px solid #f3b8be;color:#7a0f1b;border-radius:10px;padding:12px 14px;font-size:14px;margin-top:14px}
+.fail a{font-weight:800}
+.done{text-align:center;padding:10px 4px}
+.done .ok{width:68px;height:68px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-size:34px;margin:0 auto 14px}
+.done h2{font-size:24px}
+.done p{color:var(--mut);margin:8px 0}
+.done .recap{background:#eef1f8;border-radius:12px;padding:12px;font-size:14.5px;margin:16px 0;color:var(--ink)}
+.call{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800;border-radius:12px;min-height:52px;padding:0 22px;margin-top:6px}
+footer{padding:6px 0 34px;text-align:center;color:var(--mut);font-size:13px}
+footer b{color:var(--navy)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjcAAAChCAYAAAA7iJ7ZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA29pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMi1jMDAwIDc5LjFiNjVhNzliNCwgMjAyMi8wNi8xMy0yMjowMTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozQTA4QTk3ODg0MjE2ODExODNEMThGNTg2NjU3QTM1NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMkY1MkUxQjIyQ0ExMUVEOEMyMTk5ODNCNEVBRTVDNSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMkY1MkUxQTIyQ0ExMUVEOEMyMTk5ODNCNEVBRTVDNSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDU3YjZhOWItZTY2NC00ODhmLTkwOGMtMWMxNWVmNzg4NzhjIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNBMDhBOTc4ODQyMTY4MTE4M0QxOEY1ODY2NTdBMzU2Ii8+IDwvcmRm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" alt="Temple Sécurité – Experts en protection des biens" width="134" height="38">
+      <span class="pill">Étude gratuite</span>
+    </div>
+    <div class="hero">
+      <h1>Et si votre local était <em>invisible</em> pour un cambrioleur&nbsp;?</h1>
+      <p>Le générateur de brouillard de sécurité remplit les lieux en quelques secondes : l’intrus n’y voit plus rien. Répondez à quelques questions (≈&nbsp;3&nbsp;min) et nous préparons <strong>gratuitement</strong> l’étude de votre site.</p>
+      <ul class="chips">
+        <li>Sans engagement</li>
+        <li>Solution mensualisée</li>
+        <li>Un expert vous rappelle</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<form id="f" class="card" novalidate autocomplete="on">
+  <div class="prog" aria-hidden="true">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <small id="stepLbl">Étape 1 / 5</small>
+  </div>
+
+  <!-- ÉTAPE 1 -->
+  <section class="step on" data-step="1" aria-labelledby="h1s">
+    <h2 id="h1s" tabindex="-1">Votre activité</h2>
+    <p class="sub">Pour cibler le bon scénario de protection.</p>
+
+    <fieldset class="q" id="q-type">
+      <legend>Quel type de site souhaitez-vous protéger&nbsp;? <span class="req">*</span></legend>
+      <div class="grid g2">
+        <label class="opt"><input type="radio" name="type" value="Entrepôt / logistique" data-k="entrepot"><span><i>🏭</i>Entrepôt / logistique</span></label>
+        <label class="opt"><input type="radio" name="type" value="Commerce / boutique" data-k="commerce"><span><i>🏬</i>Commerce / boutique</span></label>
+        <label class="opt"><input type="radio" name="type" value="Bijouterie / horlogerie" data-k="bijouterie"><span><i>💎</i>Bijouterie / horlogerie</span></label>
+        <label class="opt"><input type="radio" name="type" value="Atelier / usine / production" data-k="atelier"><span><i>⚙️</i>Atelier / usine</span></label>
+        <label class="opt"><input type="radio" name="type" value="Pharmacie / santé" data-k="pharmacie"><span><i>💊</i>Pharmacie / santé</span></label>
+        <label class="opt"><input type="radio" name="type" value="Alimentaire (restaurant, boulangerie…)" data-k="alimentaire"><span><i>🥖</i>Alimentaire</span></label>
+        <label class="opt"><input type="radio" name="type" value="Bureaux / serveurs" data-k="bureaux"><span><i>🖥️</i>Bureaux / serveurs</span></label>
+        <label class="opt"><input type="radio" name="type" value="Autre" data-k="autre"><span><i>📍</i>Autre</span></label>
+      </div>
+      <input type="text" id="typeAutre" class="hide" placeholder="Précisez votre activité" style="margin-top:10px" aria-label="Précisez votre activité">
+      <p class="err" id="e-type"></p>
+    </fieldset>
+
+    <div class="q" id="q-societe">
+      <label class="lab" for="societe">Nom de l’entreprise <span class="req">*</span></label>
+      <input type="text" id="societe" autocomplete="organization" placeholder="Ex. Dupont Logistique">
+      <p class="err" id="e-societe"></p>
+    </div>
+
+    <div class="q" id="q-ville">
+      <label class="lab" for="ville">Adresse du site à protéger (ville ou code postal) <span class="req">*</span></label>
+      <input type="text" id="ville" autocomplete="address-level2" placeholder="Ex. 93000 Bobigny">
+      <p class="err" id="e-ville"></p>
+    </div>
+
+    <fieldset class="q">
+      <legend>Vous êtes… <span class="opt-t">(facultatif)</span></legend>
+      <div class="grid g3">
+        <label class="opt"><input type="radio" name="statut" value="Propriétaire des murs"><span>Propriétaire</span></label>
+        <label class="opt"><input type="radio" name="statut" value="Locataire"><span>Locataire</span></label>
+        <label class="opt"><input type="radio" name="statut" value="Ne sait pas"><span>Je ne sais pas</span></label>
+      </div>
+    </fieldset>
+  </section>
+
+  <!-- ÉTAPE 2 -->
+  <section class="step" data-step="2" aria-labelledby="h2s">
+    <h2 id="h2s" tabindex="-1">Vos locaux</h2>
+    <p class="sub">Le volume à couvrir détermine le générateur adapté.</p>
+
+    <div class="q" id="q-dim">
+      <div class="inline" id="dimBox">
+        <div>
+          <label class="lab" for="surface">Surface à protéger</label>
+          <div class="unit"><input type="number" id="surface" inputmode="decimal" min="1" max="100000" step="any" placeholder="Ex. 250"><b>m²</b></div>
+        </div>
+        <div>
+          <label class="lab" for="hauteur">Hauteur sous plafond</label>
+          <div class="unit"><input type="number" id="hauteur" inputmode="decimal" min="1" max="30" step="any" placeholder="Ex. 4"><b>m</b></div>
+        </div>
+      </div>
+      <label class="sw"><input type="checkbox" id="nodim"> Je ne connais pas les dimensions (on mesurera au laser sur place)</label>
+      <p class="err" id="e-dim"></p>
+    </div>
+
+    <div class="est hide" id="est" role="status" aria-live="polite">
+      <span class="ico">📐</span>
+      <div><strong id="estV"></strong><span id="estG"></span>
+        <small>Pré-orientation indicative, confirmée par mesure laser lors de l’étude.</small></div>
+    </div>
+
+    <fieldset class="q">
+      <legend>Configuration des lieux</legend>
+      <div class="grid g1">
+        <label class="opt"><input type="radio" name="config" value="Un seul grand volume ouvert"><span>Un seul grand volume ouvert</span></label>
+        <label class="opt"><input type="radio" name="config" value="Plusieurs pièces cloisonnées"><span>Plusieurs pièces / zones cloisonnées</span></label>
+        <label class="opt"><input type="radio" name="config" value="Plusieurs niveaux / mezzanine"><span>Plusieurs niveaux ou mezzanine</span></label>
+        <label class="opt"><input type="radio" name="config" value="Plusieurs bâtiments"><span>Plusieurs bâtiments</span></label>
+      </div>
+    </fieldset>
+    <div class="note hide" id="cfgNote">Chaque volume cloisonné doit être couvert : l’étude calculera le nombre de générateurs nécessaires.</div>
+  </section>
+
+  <!-- ÉTAPE 3 -->
+  <section class="step" data-step="3" aria-labelledby="h3s">
+    <h2 id="h3s" tabindex="-1">Ce que vous protégez</h2>
+    <p class="sub">Plusieurs réponses possibles. Tout est facultatif.</p>
+
+    <fieldset class="q">
+      <legend>Quelles marchandises ou équipements&nbsp;?</legend>
+      <div class="grid g2">
+        <label class="opt"><input type="checkbox" name="march" value="Électronique / informatique"><span>Électronique / informatique</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Bijoux / horlogerie"><span>Bijoux / horlogerie</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Alcool / tabac"><span>Alcool / tabac</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Vêtements / luxe / maroquinerie"><span>Vêtements / luxe</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Parapharmacie / cosmétiques / médicaments"><span>Pharmacie / cosmétiques</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Outillage / matériel / pièces"><span>Outillage / pièces</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Produits alimentaires"><span>Produits alimentaires</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Serveurs / documents sensibles"><span>Serveurs / documents</span></label>
+        <label class="opt"><input type="checkbox" name="march" value="Autre"><span>Autre</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="lab" for="valeur">Valeur approximative du stock / matériel</label>
+      <select id="valeur">
+        <option value="">Choisir…</option>
+        <option>Moins de 50 000 €</option>
+        <option>50 000 à 150 000 €</option>
+        <option>150 000 à 500 000 €</option>
+        <option>Plus de 500 000 €</option>
+        <option>Je préfère ne pas le dire</option>
+      </select>
+    </div>
+
+    <fieldset class="q">
+      <legend>Avez-vous déjà subi une intrusion&nbsp;?</legend>
+      <div class="grid g2">
+        <label class="opt"><input type="radio" name="histo" value="Jamais"><span>Jamais</span></label>
+        <label class="opt"><input type="radio" name="histo" value="Une tentative"><span>Une tentative</span></label>
+        <label class="opt"><input type="radio" name="histo" value="Un cambriolage"><span>Un cambriolage</span></label>
+        <label class="opt"><input type="radio" name="histo" value="Plusieurs cambriolages"><span>Plusieurs</span></label>
+      </div>
+    </fieldset>
+    <div class="q hide" id="q-quand">
+      <label class="lab" for="quand">C’était il y a combien de temps&nbsp;?</label>
+      <select id="quand">
+        <option value="">Choisir…</option>
+        <option>Moins de 12 mois</option>
+        <option>Entre 1 et 3 ans</option>
+        <option>Plus de 3 ans</option>
+      </select>
+    </div>
+
+    <fieldset class="q">
+      <legend>Quelqu’un reste-t-il dans les locaux la nuit ou le week-end&nbsp;?</legend>
+      <div class="grid g2">
+        <label class="opt"><input type="radio" name="nuit" value="Non, locaux vides"><span>Non, locaux vides</span></label>
+        <label class="opt"><input type="radio" name="nuit" value="Oui (logement attenant, gardien…)"><span>Oui (logement, gardien…)</span></label>
+      </div>
+    </fieldset>
+  </section>
+
+  <!-- ÉTAPE 4 -->
+  <section class="step" data-step="4" aria-labelledby="h4s">
+    <h2 id="h4s" tabindex="-1">Sécurité actuelle &amp; assurance</h2>
+    <p class="sub">Pour compléter l’existant sans doublon, et préparer l’étude de votre contrat.</p>
+
+    <fieldset class="q">
+      <legend>Équipements déjà en place</legend>
+      <div class="grid g2">
+        <label class="opt"><input type="checkbox" name="equip" value="Alarme intrusion"><span>Alarme intrusion</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Télésurveillance / levée de doute"><span>Télésurveillance</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Vidéosurveillance"><span>Vidéosurveillance</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Rideaux / grilles métalliques"><span>Rideaux / grilles</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Détection incendie"><span>Détection incendie</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Sprinklers (extinction automatique)"><span>Sprinklers</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Ventilation / climatisation / désenfumage"><span>Ventilation / clim.</span></label>
+        <label class="opt"><input type="checkbox" name="equip" value="Aucun"><span>Aucun</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="lab" for="assureur">Assureur actuel (multirisque professionnelle) <span class="opt-t">(facultatif)</span></label>
+      <input type="text" id="assureur" placeholder="Ex. AXA, Allianz, MMA…">
+    </div>
+
+    <div class="inline q">
+      <div>
+        <label class="lab" for="echeance">Échéance du contrat</label>
+        <select id="echeance">
+          <option value="">Choisir…</option>
+          <option>Janvier</option><option>Février</option><option>Mars</option><option>Avril</option>
+          <option>Mai</option><option>Juin</option><option>Juillet</option><option>Août</option>
+          <option>Septembre</option><option>Octobre</option><option>Novembre</option><option>Décembre</option>
+          <option>Je ne sais pas</option>
+        </select>
+      </div>
+      <div>
+        <label class="lab" for="prime">Prime annuelle</label>
+        <select id="prime">
+          <option value="">Choisir…</option>
+          <option>Moins de 1 500 €</option>
+          <option>1 500 à 3 000 €</option>
+          <option>3 000 à 6 000 €</option>
+          <option>6 000 à 12 000 €</option>
+          <option>Plus de 12 000 €</option>
+          <option>Je préfère ne pas le dire</option>
+        </select>
+      </div>
+    </div>
+
+    <fieldset class="q">
+      <legend>Notre courtier partenaire peut examiner votre contrat d’assurance professionnelle. Intéressé&nbsp;?</legend>
+      <div class="grid g3">
+        <label class="opt"><input type="radio" name="courtier" value="Oui"><span>Oui</span></label>
+        <label class="opt"><input type="radio" name="courtier" value="Plus tard"><span>Plus tard</span></label>
+        <label class="opt"><input type="radio" name="courtier" value="Non"><span>Non</span></label>
+      </div>
+    </fieldset>
+    <div class="note">Un site mieux protégé peut permettre de renégocier ses conditions d’assurance. Aucun résultat n’est garanti&nbsp;: c’est le courtier qui analyse votre contrat et vous confirme les conditions.</div>
+  </section>
+
+  <!-- ÉTAPE 5 -->
+  <section class="step" data-step="5" aria-labelledby="h5s">
+    <h2 id="h5s" tabindex="-1">Votre projet &amp; vos coordonnées</h2>
+    <p class="sub">Dernière étape&nbsp;: un expert vous rappelle avec votre étude.</p>
+
+    <fieldset class="q">
+      <legend>Votre projet</legend>
+      <div class="grid g2">
+        <label class="opt"><input type="radio" name="delai" value="Dès que possible"><span>Dès que possible</span></label>
+        <label class="opt"><input type="radio" name="delai" value="Dans les 3 mois"><span>Dans les 3 mois</span></label>
+        <label class="opt"><input type="radio" name="delai" value="Plus tard"><span>Plus tard</span></label>
+        <label class="opt"><input type="radio" name="delai" value="Je me renseigne"><span>Je me renseigne</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>Financement souhaité</legend>
+      <div class="grid g3">
+        <label class="opt"><input type="radio" name="fin" value="Mensualisé"><span>Mensualisé</span></label>
+        <label class="opt"><input type="radio" name="fin" value="Comptant"><span>Comptant</span></label>
+        <label class="opt"><input type="radio" name="fin" value="À voir"><span>À voir</span></label>
+      </div>
+    </fieldset>
+
+    <div class="inline q" id="q-nom">
+      <div>
+        <label class="lab" for="prenom">Prénom <span class="req">*</span></label>
+        <input type="text" id="prenom" autocomplete="given-name">
+        <p class="err" id="e-prenom"></p>
+      </div>
+      <div>
+        <label class="lab" for="nom">Nom <span class="req">*</span></label>
+        <input type="text" id="nom" autocomplete="family-name">
+        <p class="err" id="e-nom"></p>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="lab" for="fonction">Fonction <span class="opt-t">(facultatif)</span></label>
+      <input type="text" id="fonction" autocomplete="organization-title" placeholder="Ex. Gérant, responsable logistique…">
+    </div>
+
+    <div class="q" id="q-tel">
+      <label class="lab" for="tel">Téléphone <span class="req">*</span></label>
+      <input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78">
+      <p class="err" id="e-tel"></p>
+    </div>
+
+    <div class="q" id="q-email">
+      <label class="lab" for="email">Email professionnel <span class="req">*</span></label>
+      <input type="email" id="email" autocomplete="email" inputmode="email" placeholder="vous@entreprise.fr">
+      <p class="err" id="e-email"></p>
+    </div>
+
+    <fieldset class="q">
+      <legend>Meilleur moment pour vous rappeler</legend>
+      <div class="grid g2">
+        <label class="opt"><input type="radio" name="creneau" value="Matin"><span>Matin</span></label>
+        <label class="opt"><input type="radio" name="creneau" value="Midi"><span>Midi</span></label>
+        <label class="opt"><input type="radio" name="creneau" value="Après-midi"><span>Après-midi</span></label>
+        <label class="opt"><input type="radio" name="creneau" value="Fin de journée"><span>Fin de journée</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="lab" for="msg">Un détail à ajouter&nbsp;? <span class="opt-t">(facultatif)</span></label>
+      <textarea id="msg" placeholder="Accès, contraintes, questions… Vous pourrez aussi répondre à notre email avec des photos ou un plan."></textarea>
+    </div>
+
+    <div class="q" id="q-rgpd">
+      <label class="consent">
+        <input type="checkbox" id="rgpd">
+        <span>J’accepte que Temple Sécurité utilise ces informations pour préparer mon étude et me recontacter. Elles ne sont transmises à un courtier partenaire que si j’en ai fait la demande. Je peux demander leur suppression à tout moment. <span class="req">*</span></span>
+      </label>
+      <p class="err" id="e-rgpd"></p>
+    </div>
+
+    <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="checkbox" id="botcheck" tabindex="-1" autocomplete="off"></label></div>
+
+    <div class="fail hide" id="fail" role="alert">
+      L’envoi n’a pas abouti. Réessayez, ou appelez-nous directement au <a href="tel:+33188335847">01 88 33 58 47</a> : nous prenons votre demande par téléphone.
+    </div>
+  </section>
+
+  <div class="nav" id="nav">
+    <button type="button" class="btn sec hide" id="back">Retour</button>
+    <button type="button" class="btn pri" id="next">Continuer</button>
+  </div>
+  <p class="fine">🔒 Étude gratuite et sans engagement · Réponse par un expert Temple Sécurité</p>
+</form>
+
+<section id="done" class="card done hide" aria-live="polite">
+  <div class="ok" aria-hidden="true">✓</div>
+  <h2 id="doneH" tabindex="-1">Merci, c’est bien reçu&nbsp;!</h2>
+  <p>Un expert Temple Sécurité étudie votre site et vous recontacte rapidement.</p>
+  <div class="recap" id="recap"></div>
+  <p>Des photos ou un plan des lieux accélèrent l’étude&nbsp;: répondez simplement à notre email.</p>
+  <a class="call" href="tel:+33188335847">📞 01 88 33 58 47</a>
+</section>
+</main>
+
+<footer class="wrap">
+  <b>TEMPLE SÉCURITÉ</b> · Experts en protection des biens<br>
+  <a href="https://www.temple-securite.fr" target="_blank" rel="noopener">www.temple-securite.fr</a>
+</footer>
+
+<script>
+/* ================= CONFIGURATION ================= */
+// Clé Web3Forms du compte samuell5770@gmail.com : les réponses arrivent sur cette adresse.
+// Clé publique par conception (elle ne permet que d'envoyer des réponses vers votre adresse).
+const ACCESS_KEY = "ae1bd862-bade-41a9-9b03-4e3897cf94e9";
+const ENDPOINT = "https://api.web3forms.com/submit";
+/* ================================================= */
+
+(function(){
+  "use strict";
+  const $ = (id)=>document.getElementById(id);
+  const form = $("f"), steps = [...document.querySelectorAll(".step")], TOTAL = steps.length;
+  let cur = 1, sending = false;
+
+  /* ---------- Paramètres d'URL du mailing : ?src=...&secteur=...&email=...&societe=... ---------- */
+  const qs = new URLSearchParams(location.search);
+  const src = (qs.get("src")||qs.get("utm_campaign")||"").slice(0,80);
+  const sect = (qs.get("secteur")||"").toLowerCase();
+  if(sect){ const r=form.querySelector('input[name="type"][data-k="'+sect+'"]'); if(r){ r.checked=true; r.dispatchEvent(new Event("change",{bubbles:true})); } }
+  if(qs.get("email")) $("email").value = qs.get("email").slice(0,120);
+  if(qs.get("societe")) $("societe").value = qs.get("societe").slice(0,120);
+
+  /* ---------- Helpers ---------- */
+  const radio = (n)=>{ const e=form.querySelector('input[name="'+n+'"]:checked'); return e?e.value:""; };
+  const multi = (n)=>[...form.querySelectorAll('input[name="'+n+'"]:checked')].map(e=>e.value);
+  const T = (id)=>($(id).value||"").trim();
+  const setErr = (key,msg)=>{ const e=$("e-"+key), q=$("q-"+key); if(e) e.textContent=msg||""; if(q) q.classList.toggle("bad",!!msg); };
+  const num = (id)=>{ const v=parseFloat(String($(id).value).replace(",",".")); return isFinite(v)?v:NaN; };
+
+  /* ---------- Effacer l'erreur dès la saisie ---------- */
+  [["societe","societe"],["ville","ville"],["prenom","nom"],["nom","nom"],["tel","tel"],["email","email"]].forEach(([id,q])=>{
+    $(id).addEventListener("input",()=>{ setErr(id,""); if(id==="prenom"||id==="nom"){ if(T("prenom").length>=2&&T("nom").length>=2) $("q-nom").classList.remove("bad"); } });
+  });
+  $("rgpd").addEventListener("change",()=>setErr("rgpd",""));
+
+  /* ---------- Type "Autre" ---------- */
+  form.addEventListener("change",(ev)=>{
+    if(ev.target.name==="type"){
+      const a = ev.target.value==="Autre";
+      $("typeAutre").classList.toggle("hide",!a);
+      if(a) $("typeAutre").focus();
+      setErr("type","");
+    }
+    if(ev.target.name==="histo"){
+      $("q-quand").classList.toggle("hide", ev.target.value==="Jamais");
+    }
+    if(ev.target.name==="config"){
+      $("cfgNote").classList.toggle("hide", !/Plusieurs/.test(ev.target.value) || ev.target.value==="Plusieurs niveaux / mezzanine");
+    }
+    if(ev.target.name==="equip" && ev.target.value==="Aucun" && ev.target.checked){
+      form.querySelectorAll('input[name="equip"]').forEach(i=>{ if(i.value!=="Aucun") i.checked=false; });
+    } else if(ev.target.name==="equip" && ev.target.value!=="Aucun" && ev.target.checked){
+      form.querySelectorAll('input[name="equip"]').forEach(i=>{ if(i.value==="Aucun") i.checked=false; });
+    }
+  });
+
+  /* ---------- Volume + pré-orientation (gamme 390 → 14 000 m³) ---------- */
+  const GAMMES = [[390,"390"],[900,"900"],[1500,"1 500"],[2400,"2 400"],[6000,"6 000"],[14000,"14 000"]];
+  const fmt = (n)=>Math.round(n).toLocaleString("fr-FR");
+  function orient(v){
+    for(const [cap,l] of GAMMES){ if(v<=cap) return "Générateur de la gamme "+l+" m³ probablement adapté."; }
+    return "Volume important : plusieurs générateurs ou une étude sur mesure.";
+  }
+  function computeVol(){
+    if($("nodim").checked) return null;
+    const s=num("surface"), h=num("hauteur");
+    if(!(s>0 && h>0)) return null;
+    return s*h;
+  }
+  function updEst(){
+    const v = computeVol(), box=$("est");
+    if(v===null){ box.classList.add("hide"); return; }
+    $("estV").textContent = "Volume estimé : ≈ "+fmt(v)+" m³";
+    $("estG").textContent = orient(v);
+    box.classList.remove("hide");
+  }
+  ["surface","hauteur"].forEach(id=>$(id).addEventListener("input",()=>{ updEst(); setErr("dim",""); }));
+  $("nodim").addEventListener("change",()=>{
+    const off=$("nodim").checked;
+    $("dimBox").style.opacity = off?".45":"1";
+    ["surface","hauteur"].forEach(id=>{ $(id).disabled=off; });
+    updEst(); setErr("dim","");
+  });
+
+  /* ---------- Validation par étape ---------- */
+  function validate(n){
+    let ok=true, first=null;
+    const bad=(key,msg)=>{ setErr(key,msg); ok=false; if(!first) first=$("q-"+key)||$("e-"+key); };
+    if(n===1){
+      setErr("type",""); setErr("societe",""); setErr("ville","");
+      if(!radio("type")) bad("type","Choisissez le type de site.");
+      else if(radio("type")==="Autre" && !T("typeAutre")){ bad("type","Précisez votre activité."); }
+      if(T("societe").length<2) bad("societe","Indiquez le nom de l’entreprise.");
+      if(T("ville").length<2) bad("ville","Indiquez la ville ou le code postal du site.");
+    }
+    if(n===2){
+      setErr("dim","");
+      if(!$("nodim").checked){
+        const s=num("surface"), h=num("hauteur");
+        if(!(s>0 && s<=100000) || !(h>0 && h<=30)) bad("dim","Indiquez la surface et la hauteur, ou cochez « Je ne connais pas les dimensions ».");
+      }
+    }
+    if(n===5){
+      ["prenom","nom","tel","email","rgpd"].forEach(k=>setErr(k,""));
+      const pnBad = T("prenom").length<2 || T("nom").length<2;
+      setErr("prenom", T("prenom").length<2?"Requis":"");
+      setErr("nom", T("nom").length<2?"Requis":"");
+      $("q-nom").classList.toggle("bad", pnBad);
+      if(pnBad){ ok=false; first=first||$("q-nom"); }
+      const digits=T("tel").replace(/[^\d]/g,"");
+      if(digits.length<9||digits.length>15) bad("tel","Indiquez un numéro de téléphone valide.");
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(T("email"))) bad("email","Indiquez une adresse email valide.");
+      if(!$("rgpd").checked) bad("rgpd","Merci de cocher la case pour que nous puissions traiter votre demande.");
+    }
+    if(first && first.scrollIntoView) first.scrollIntoView({behavior:"smooth",block:"center"});
+    return ok;
+  }
+
+  /* ---------- Navigation ---------- */
+  function show(n){
+    cur=n;
+    steps.forEach(s=>s.classList.toggle("on", +s.dataset.step===n));
+    $("fill").style.width = (n/TOTAL*100)+"%";
+    $("stepLbl").textContent = "Étape "+n+" / "+TOTAL;
+    $("back").classList.toggle("hide", n===1);
+    $("next").textContent = n===TOTAL ? "Recevoir mon étude gratuite" : "Continuer";
+    const h = steps[n-1].querySelector("h2"); if(h){ h.focus({preventScroll:true}); }
+    const top = form.getBoundingClientRect().top + window.scrollY - 12;
+    window.scrollTo({top:Math.max(0,top), behavior:"smooth"});
+  }
+  $("back").addEventListener("click",()=>{ if(cur>1) show(cur-1); });
+  $("next").addEventListener("click",()=>{
+    if(sending) return;
+    if(!validate(cur)) return;
+    if(cur<TOTAL) show(cur+1); else submit();
+  });
+  form.addEventListener("keydown",(e)=>{ if(e.key==="Enter" && e.target.tagName==="INPUT" && e.target.type!=="checkbox" && e.target.type!=="radio"){ e.preventDefault(); $("next").click(); }});
+
+  /* ---------- Envoi ---------- */
+  function buildPayload(){
+    const v = computeVol();
+    const typ = radio("type")==="Autre" ? "Autre : "+T("typeAutre") : radio("type");
+    const items = {
+      "Société": T("societe"),
+      "Contact": (T("prenom")+" "+T("nom")).trim(),
+      "Fonction": T("fonction"),
+      "Téléphone": T("tel"),
+      "Email": T("email"),
+      "Rappel souhaité": radio("creneau"),
+      "Type de site": typ,
+      "Adresse / ville du site": T("ville"),
+      "Statut des murs": radio("statut"),
+      "Surface (m²)": $("nodim").checked ? "" : String($("surface").value),
+      "Hauteur sous plafond (m)": $("nodim").checked ? "" : String($("hauteur").value),
+      "Volume estimé (m³)": v===null ? "Dimensions inconnues : mesure laser à prévoir" : fmt(v),
+      "Pré-orientation générateur": v===null ? "" : orient(v),
+      "Configuration": radio("config"),
+      "Marchandises": multi("march").join(", "),
+      "Valeur du stock": T("valeur"),
+      "Historique d'intrusion": radio("histo"),
+      "Date de l'incident": $("q-quand").classList.contains("hide") ? "" : T("quand"),
+      "Présence la nuit / week-end": radio("nuit"),
+      "Équipements en place": multi("equip").join(", "),
+      "Assureur actuel": T("assureur"),
+      "Échéance du contrat": T("echeance"),
+      "Prime annuelle": T("prime"),
+      "Étude du contrat par le courtier": radio("courtier"),
+      "Délai du projet": radio("delai"),
+      "Financement souhaité": radio("fin"),
+      "Message": T("msg"),
+      "Source (mailing)": src,
+      "Consentement RGPD": "Oui, " + new Date().toLocaleString("fr-FR",{timeZone:"Europe/Paris"})
+    };
+    const out = {
+      access_key: ACCESS_KEY,
+      subject: "Étude brouillard – " + T("societe") + " (" + T("ville") + ")",
+      from_name: "Étude brouillard – Temple Sécurité",
+      botcheck: $("botcheck").checked ? "1" : ""
+    };
+    Object.keys(items).forEach(k=>{ if(items[k]!=="" && items[k]!==undefined) out[k]=items[k]; });
+    return out;
+  }
+
+  async function submit(){
+    $("fail").classList.add("hide");
+    if($("botcheck").checked){ return; }
+    if(ACCESS_KEY==="VOTRE_CLE_WEB3FORMS"){
+      $("fail").innerHTML = "Formulaire non configuré : la clé d’envoi n’a pas encore été renseignée dans la page.";
+      $("fail").classList.remove("hide"); return;
+    }
+    sending=true; const b=$("next"); b.disabled=true; b.textContent="Envoi en cours…";
+    try{
+      const r = await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(buildPayload())});
+      let j=null; try{ j=await r.json(); }catch(_){}
+      if(r.ok && j && j.success){ finish(); }
+      else throw new Error((j&&j.message)||("HTTP "+r.status));
+    }catch(err){
+      console.error("Envoi:", err);
+      $("fail").classList.remove("hide");
+      b.disabled=false; b.textContent="Recevoir mon étude gratuite"; sending=false;
+      $("fail").scrollIntoView({behavior:"smooth",block:"center"});
+    }
+  }
+
+  function finish(){
+    const v=computeVol();
+    const lines=[ "<strong>"+esc(T("societe"))+"</strong> – "+esc(T("ville")) ];
+    if(v!==null) lines.push("Volume estimé : ≈ "+fmt(v)+" m³ · "+esc(orient(v)));
+    $("recap").innerHTML = lines.join("<br>");
+    document.querySelector(".top .pill").textContent="Demande envoyée";
+    form.classList.add("hide"); $("done").classList.remove("hide");
+    $("doneH").focus({preventScroll:true});
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+  show(1);
+})();
+</script>
+</body>
+</html>
