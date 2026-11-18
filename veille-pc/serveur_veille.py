@@ -147,7 +147,7 @@ verifier(); setInterval(verifier, 15000);
 def fabriquer_handler(cfg):
     cle = cfg["cle"]
     nom = cfg.get("nom") or socket.gethostname()
-    mac = adresse_mac()
+    mac = cfg.get("mac") or adresse_mac()
 
     class Handler(BaseHTTPRequestHandler):
         server_version = "VeillePC/1.0"
